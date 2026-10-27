@@ -17,3 +17,10 @@
 ## Pages
 - [Home](https://tetonpeaksai.com/): services, pricing, service area, FAQ
 - [AI Readiness Scorecard](https://tetonpeaksai.com/scorecard.html): free 10-question self-check
+- [Missed-Call Rescue Pilot](https://tetonpeaksai.com/missed-call-text-back-pilot.html)
+- [Missed-Call Rescue](https://tetonpeaksai.com/missed-call-text-back.html)
+- [Lead Engine](https://tetonpeaksai.com/lead-follow-up-automation.html)
+- [AI Front Desk (AI receptionist)](https://tetonpeaksai.com/ai-receptionist.html)
+- [AI Process Audit](https://tetonpeaksai.com/ai-process-audit.html)
+- [Custom Build](https://tetonpeaksai.com/custom-ai-automation.html)
+- [Free AI Process Consultation](https://tetonpeaksai.com/free-ai-consultation.html)
