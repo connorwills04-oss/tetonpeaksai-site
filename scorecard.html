@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Readiness Scorecard | Teton Peaks AI</title>
+<meta name="description" content="10 quick questions, about 3 minutes. See where your business is losing leads and time, and what to fix first. Free from Teton Peaks AI in Idaho Falls.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Readiness Scorecard | Teton Peaks AI">
+<meta property="og:description" content="10 quick questions. See where your business is losing leads and time, and what to fix first.">
+<meta property="og:url" content="https://tetonpeaksai.com/scorecard.html">
+<meta property="og:site_name" content="Teton Peaks AI">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.sc{padding:64px 0 40px;position:relative;overflow:hidden;isolation:isolate}
+.sc .glow{top:-320px}
+.sc-card{max-width:720px;margin:0 auto;background:linear-gradient(180deg,rgba(17,24,39,.92),rgba(10,15,28,.92));border:1px solid var(--line2);border-radius:24px;padding:40px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.06)}
+.sc-card h1{font-size:clamp(32px,4.6vw,48px);margin:18px 0 14px}
+.sc-card h2{font-size:clamp(24px,3vw,30px);margin-bottom:8px}
+.sc-intro .lede{font-size:17px}
+.sc-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 30px;padding:0;list-style:none;color:var(--dim);font-size:14px}
+.sc-meta li{display:flex;align-items:center;gap:8px}
+.sc-meta li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(94,234,212,.15)}
+.hide{display:none!important}
+.prog{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.prog-bar{flex:1;height:6px;border-radius:999px;background:var(--panel2);overflow:hidden}
+.prog-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--blue));transition:width .25s}
+.prog span{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.q-topic{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.q-text{font-size:clamp(20px,2.4vw,24px);font-weight:700;line-height:1.25;letter-spacing:-.02em;margin-bottom:22px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;color:#d2dbe7;font-size:15.5px;padding:15px 18px;border-radius:14px;border:1px solid var(--line2);background:var(--panel);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:rgba(94,234,212,.45);background:rgba(255,255,255,.06)}
+.opt b{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:13px;color:var(--teal);border:1px solid rgba(94,234,212,.35);background:rgba(45,212,191,.08)}
+.opt.sel{border-color:var(--teal);background:rgba(45,212,191,.1);color:var(--text)}
+.q-nav{display:flex;justify-content:space-between;margin-top:22px}
+.linkbtn{background:none;border:0;color:var(--muted);font:inherit;font-size:14.5px;cursor:pointer;padding:6px 0}
+.linkbtn:hover{color:var(--text)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 18px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:#c5cfdd;margin-bottom:6px}
+.field input{width:100%;height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--line2);background:rgba(7,11,20,.6);color:var(--text);font:inherit;font-size:15.5px}
+.field input:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.privacy{font-size:13px;color:var(--dim);margin-top:14px}
+.err{color:#fca5a5;font-size:14px;margin-top:10px;min-height:1em}
+.score-wrap{display:flex;align-items:center;gap:28px;margin:6px 0 26px}
+.ring{--p:0;flex:none;width:132px;height:132px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--teal) calc(var(--p)*1%),var(--panel2) 0)}
+.ring div{width:108px;height:108px;border-radius:50%;background:#0b1120;display:grid;place-items:center;text-align:center}
+.ring strong{display:block;font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.ring span{font-size:12px;color:var(--dim)}
+.band-tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#04111a;background:var(--teal);padding:5px 12px;border-radius:999px;margin-bottom:10px}
+.band-tag.b-low{background:#fca5a5}.band-tag.b-mid{background:#fcd34d}
+.res-read{color:#c5cfdd;font-size:16px}
+.res-h{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:28px 0 12px}
+.gaps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.gaps li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.gaps strong{display:block;font-size:15px}
+.gaps span{display:block;color:var(--muted);font-size:14.5px}
+.next{margin-top:12px;padding:22px;border-radius:16px;border:1px solid rgba(94,234,212,.35);background:radial-gradient(120% 140% at 0% 0%,rgba(45,212,191,.12),transparent 60%),var(--bg2)}
+.next p{color:#d2dbe7}
+.next .cta-row{margin-top:18px}
+.sent-note{font-size:13.5px;color:var(--dim);margin-top:16px}
+.sent-note a{color:var(--teal);text-decoration:underline}
+@media (max-width:600px){
+  .sc-card{padding:26px 20px;border-radius:20px}
+  .fields{grid-template-columns:1fr}
+  .score-wrap{flex-direction:column;align-items:flex-start;gap:16px}
+  .cta-row .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="Teton Peaks AI home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="#0f172a" stroke="url(#mg)" stroke-opacity=".5"/><path d="M5 24 L12.5 12 L16 17 L20 9 L27 24" fill="none" stroke="url(#mg)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M18.4 12.2 L20 9 L21.6 12.2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span>Teton Peaks <b>AI</b></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="index.html#workflows">Workflows</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#start">Pricing</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="https://calendly.com/tetonpeaksai/free-ai-process-consultation" target="_blank" rel="noopener">Book a free call</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="sc">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sc-card" aria-live="polite">
+
+      <!-- Step 1: intro -->
+      <div id="s-intro" class="sc-intro">
+        <p class="pill"><span class="dot"></span>Free for Eastern Idaho businesses</p>
+        <h1>AI Readiness <span class="grad">Scorecard</span></h1>
+        <p class="lede">10 quick questions about calls, leads, reviews, and admin. You get a score out of 100, your top gaps, and what to fix first.</p>
+        <ul class="sc-meta">
+          <li>About 3 minutes</li>
+          <li>No tech talk</li>
+          <li>Built for trades, dental, auto, salons, and more</li>
+        </ul>
+        <button class="btn btn-primary" id="start" type="button">Start the scorecard <span aria-hidden="true">&rarr;</span></button>
+      </div>
+
+      <!-- Step 2: questions -->
+      <div id="s-quiz" class="hide">
+        <div class="prog"><div class="prog-bar"><i id="pbar"></i></div><span id="pnum">1 of 10</span></div>
+        <p class="q-topic" id="qtopic"></p>
+        <p class="q-text" id="qtext"></p>
+        <div class="opts" id="opts" role="radiogroup" aria-labelledby="qtext"></div>
+        <div class="q-nav">
+          <button class="linkbtn" id="back" type="button">&larr; Back</button>
+        </div>
+      </div>
+
+      <!-- Step 3: contact capture -->
+      <form id="s-contact" class="hide" novalidate>
+        <div class="prog"><div class="prog-bar"><i style="width:100%"></i></div><span>Done</span></div>
+        <h2>Your score is ready.</h2>
+        <p class="muted">Where should we send it? We'll show it on the next screen too.</p>
+        <div class="fields">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-biz">Business name</label><input id="f-biz" name="business" autocomplete="organization" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-gotcha">Leave this empty</label><input id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-primary" id="see" type="submit">See my score <span aria-hidden="true">&rarr;</span></button>
+        <p class="err" id="err" role="alert"></p>
+        <p class="privacy">We only use this to send your results and follow up. We never sell it.</p>
+      </form>
+
+      <!-- Step 4: result -->
+      <div id="s-result" class="hide">
+        <div class="score-wrap">
+          <div class="ring" id="ring"><div><strong id="r-score">0</strong><span>out of 100</span></div></div>
+          <div>
+            <span class="band-tag" id="r-tag"></span>
+            <h2 id="r-title"></h2>
+            <p class="res-read" id="r-read"></p>
+          </div>
+        </div>
+        <p class="res-h">Your top 3 gaps</p>
+        <ul class="gaps" id="r-gaps"></ul>
+        <p class="res-h">Recommended next step</p>
+        <div class="next">
+          <p id="r-next"></p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://calendly.com/tetonpeaksai/free-ai-process-consultation" target="_blank" rel="noopener">Book a free consultation <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-ghost" href="tel:+12087106351">Call or text 208-710-6351</a>
+          </div>
+        </div>
+        <p class="sent-note" id="r-sent"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-inner">
+    <a class="brand" href="index.html" aria-label="Teton Peaks AI home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0f172a" stroke="#5eead4" stroke-opacity=".5"/><path d="M5 24 L12.5 12 L16 17 L20 9 L27 24" fill="none" stroke="#5eead4" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span>Teton Peaks <b>AI</b></span>
+    </a>
+    <p>Teton Peaks AI is a dba of Prooformance LLC. Idaho Falls, ID.</p>
+    <a class="foot-phone" href="tel:+12087106351">Call or text 208-710-6351</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // SETUP: paste the Formspree endpoint here once Connor creates the form,
+  // e.g. "https://formspree.io/f/abcdwxyz". Left empty, the page falls back to
+  // opening the visitor's email app with the results addressed to Connor.
+  var FORM_ENDPOINT = "https://formspree.io/f/maeeovgb";
+  var FALLBACK_EMAIL = "connor@gettetonpeaksai.com";
+
+  // Each answer scores 0, 4, 7, or 10. Ten questions, so the total is 0 to 100.
+  var PTS = [0,4,7,10];
+  var Q = [
+    {t:"Missed calls", q:"When you can't answer the phone, what happens?",
+     a:["It rings out. We may never know who called.","They can leave a voicemail. We call back when we can.","We call back the same day.","They get a text back or a live answer right away."],
+     fix:"Missed calls get a text back from your business number within seconds."},
+    {t:"Response time", q:"A new lead comes in from your website or Facebook. How fast do they hear back?",
+     a:["A day or more","Same day","Within an hour","Within 5 minutes"],
+     fix:"New web and Facebook leads get an instant reply and a follow-up."},
+    {t:"After hours", q:"What happens to calls and messages that come in after you close?",
+     a:["Nothing until we open again","We check them when we get a chance","They get an automatic reply","They get a reply and a way to book"],
+     fix:"After-hours callers and messages get a reply and a booking link."},
+    {t:"Reviews", q:"How do you ask happy customers for a Google review?",
+     a:["We don't really ask","Now and then, in person","We ask most customers by hand","Every customer gets an automatic request"],
+     fix:"Every finished job triggers a review request. Reply drafts wait for your OK."},
+    {t:"Booking", q:"How do customers book with you?",
+     a:["Phone tag until we find a time","They call and we book it","Online booking, but no reminders","Online booking with automatic reminders"],
+     fix:"A booking link plus reminders, so fewer no-shows and less phone tag."},
+    {t:"Quotes", q:"After you send a quote or estimate, what happens?",
+     a:["We wait and hope they call","We follow up if we remember","We follow up on most of them","Follow-ups go out automatically"],
+     fix:"Open quotes get polite, automatic follow-ups until they say yes or no."},
+    {t:"Follow-up", q:"Do past customers hear from you again?",
+     a:["Not really","Only when we're slow","Sometimes, by hand","Yes, on a set schedule"],
+     fix:"Past customers get timely check-ins, so repeat work comes to you."},
+    {t:"Admin time", q:"How many hours a week do you spend on admin, like texts, scheduling, invoices, and data entry?",
+     a:["15 or more","10 to 15","5 to 10","Under 5"],
+     fix:"Repetitive admin like reminders, invoice nudges, and data entry runs on its own."},
+    {t:"Tools", q:"What runs the front office today?",
+     a:["Paper, sticky notes, and memory","My phone, texts, and a spreadsheet","One main software we only partly use","Software that's set up and connected"],
+     fix:"Your current tools get connected, so info is entered once and goes where it needs to."},
+    {t:"Your numbers", q:"Could you say how many leads came in last month, and how many booked?",
+     a:["No idea","Rough guess","We could figure it out with some digging","Yes, we track it every month"],
+     fix:"A simple monthly report of leads, bookings, and follow-ups."}
+  ];
+
+  // Bands. Copy kept short and plain. No outside stats.
+  var BANDS = [
+    {min:0, max:44, cls:"b-low", tag:"Leaking", title:"Leads and time are slipping through.",
+     read:"Calls, messages, and follow-ups depend on you being free. When you're busy, work gets missed. The good news: the first fixes are simple.",
+     next:"Start small with the $297 Missed-Call Rescue pilot. 30 days, a weekly results text, and a full refund if it doesn't win back at least one missed-call lead. Book a free consultation and we'll set it up."},
+    {min:45, max:74, cls:"b-mid", tag:"Getting by", title:"The basics work, but it's all by hand.",
+     read:"You're catching most things, but it takes your time and attention. A few automations would take the follow-up and front-desk load off your plate.",
+     next:"Book a free consultation. Most businesses here fit Lead Engine ($997 setup, $297 a month): missed-call text back, fast lead replies, a booking link, and review requests. Want to test first? The $297 pilot is a 30-day trial."},
+    {min:75, max:100, cls:"", tag:"Ready to scale", title:"You're organized. Now make it run without you.",
+     read:"Your front office is in good shape. The next gains come from connecting your tools and handing whole workflows to AI.",
+     next:"Book a free consultation to talk through a $1,500 AI Process Audit. We map your workflows and give you a written plan, credited toward a build if you start within 14 days. Bigger needs fit AI Front Desk ($2,497 setup, $497 a month) or a Custom Build from $3,000 setup plus $500 a month."}
+  ];
+
+  var ans = new Array(Q.length), i = 0;
+  var $ = function(id){return document.getElementById(id);};
+  function show(id){["s-intro","s-quiz","s-contact","s-result"].forEach(function(s){$(s).classList.toggle("hide", s!==id);}); window.scrollTo({top:0});}
+
+  function render(){
+    var q = Q[i];
+    $("pbar").style.width = (i/Q.length*100)+"%";
+    $("pnum").textContent = (i+1)+" of "+Q.length;
+    $("qtopic").textContent = q.t;
+    $("qtext").textContent = q.q;
+    $("back").style.visibility = i ? "visible" : "hidden";
+    var box = $("opts"); box.innerHTML = "";
+    q.a.forEach(function(txt, k){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "opt"+(ans[i]===k?" sel":"");
+      b.setAttribute("role","radio"); b.setAttribute("aria-checked", ans[i]===k ? "true":"false");
+      b.innerHTML = "<b>"+"ABCD"[k]+"</b><span></span>";
+      b.lastChild.textContent = txt;
+      b.onclick = function(){ ans[i]=k; if(i<Q.length-1){i++; render();} else { show("s-contact"); $("f-name").focus(); } };
+      box.appendChild(b);
+    });
+    var first = box.querySelector(".sel") || box.firstChild; if(first) first.focus({preventScroll:true});
+  }
+
+  function total(){ return ans.reduce(function(s,k){return s+PTS[k];},0); }
+  function band(sc){ for(var b=0;b<BANDS.length;b++){ if(sc>=BANDS[b].min && sc<=BANDS[b].max) return BANDS[b]; } return BANDS[0]; }
+  function gaps(){
+    return Q.map(function(q,k){return {k:k,p:PTS[ans[k]]};})
+      .filter(function(g){return g.p<10;})
+      .sort(function(a,b){return a.p-b.p || a.k-b.k;})
+      .slice(0,3);
+  }
+
+  function summary(d){
+    var lines = ["AI Readiness Scorecard","Name: "+d.name,"Business: "+d.business,"Email: "+d.email,"Phone: "+d.phone,"Score: "+d.score+"/100 ("+d.band+")",""];
+    Q.forEach(function(q,k){ lines.push((k+1)+". "+q.t+": "+q.a[ans[k]]+" ("+PTS[ans[k]]+")"); });
+    return lines.join("\n");
+  }
+
+  function result(d, sentOk){
+    var b = band(d.score);
+    $("r-score").textContent = d.score;
+    $("ring").style.setProperty("--p", d.score);
+    $("r-tag").textContent = b.tag; $("r-tag").className = "band-tag "+b.cls;
+    $("r-title").textContent = b.title;
+    $("r-read").textContent = b.read;
+    $("r-next").textContent = b.next;
+    var ul = $("r-gaps"); ul.innerHTML = "";
+    var g = gaps();
+    if(!g.length){ var li=document.createElement("li"); li.innerHTML="<strong>No big gaps.</strong><span></span>"; li.lastChild.textContent="Every area scored top marks. The audit is where we find the next wins."; ul.appendChild(li); }
+    g.forEach(function(x){
+      var li = document.createElement("li");
+      li.innerHTML = "<strong></strong><span></span>";
+      li.firstChild.textContent = Q[x.k].t+": "+Q[x.k].a[ans[x.k]];
+      li.lastChild.textContent = "Fix: "+Q[x.k].fix;
+      ul.appendChild(li);
+    });
+    var mail = "mailto:"+FALLBACK_EMAIL+"?subject="+encodeURIComponent("Scorecard: "+d.business+" ("+d.score+"/100)")+"&body="+encodeURIComponent(summary(d));
+    var note = $("r-sent");
+    if(sentOk){ note.textContent = "Thanks, "+d.name.split(" ")[0]+". Connor will follow up with your results."; }
+    else { note.innerHTML = "Want Connor to follow up? <a id=\"r-mail\">Email these results to Teton Peaks</a>."; $("r-mail").href = mail; }
+    show("s-result");
+  }
+
+  $("start").onclick = function(){ i=0; show("s-quiz"); render(); };
+  $("back").onclick = function(){ if(i>0){ i--; render(); } };
+
+  $("s-contact").addEventListener("submit", function(e){
+    e.preventDefault();
+    var d = {name:$("f-name").value.trim(), business:$("f-biz").value.trim(), email:$("f-email").value.trim(), phone:$("f-phone").value.trim()};
+    var err = $("err");
+    if(!d.name || !d.business){ err.textContent = "Please add your name and business."; return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)){ err.textContent = "Please check your email address."; return; }
+    if(d.phone.replace(/\D/g,"").length < 10){ err.textContent = "Please add a 10-digit phone number."; return; }
+    err.textContent = "";
+    if($("f-gotcha").value){ return; } // bot
+    d.score = total(); d.band = band(d.score).tag;
+    var payload = {name:d.name, business:d.business, email:d.email, phone:d.phone, score:d.score, band:d.band,
+      _subject:"Scorecard: "+d.business+" ("+d.score+"/100)", answers:summary(d), page:location.href};
+    Q.forEach(function(q,k){ payload["q"+(k+1)+"_"+q.t.toLowerCase().replace(/\W+/g,"_")] = q.a[ans[k]]+" ("+PTS[ans[k]]+")"; });
+
+    if(!FORM_ENDPOINT){
+      // No form service yet: open the visitor's email app addressed to Connor, then show the result.
+      var a = document.createElement("a");
+      a.href = "mailto:"+FALLBACK_EMAIL+"?subject="+encodeURIComponent(payload._subject)+"&body="+encodeURIComponent(payload.answers);
+      a.click();
+      result(d, false); return;
+    }
+    var btn = $("see"); btn.disabled = true; btn.textContent = "Scoring...";
+    fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(payload)})
+      .then(function(r){ result(d, r.ok); })
+      .catch(function(){ result(d, false); });
+  });
+})();
+</script>
+</body>
+</html>
