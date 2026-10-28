@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missed-Call Text Back Demo (Simulation) | Teton Peaks AI</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Cpath d='M5 24 L12.5 12 L16 17 L20 9 L27 24' fill='none' stroke='%235eead4' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#070b14;--bg2:#0b1120;--card:#0f172a;--line:#1e293b;--text:#e8edf5;--muted:#9aa7bb;--teal:#5eead4;--blue:#60a5fa;--accent:#2dd4bf;--warn:#fbbf24}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.45}
+a{color:var(--teal)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+.brand span b{background:linear-gradient(90deg,var(--teal),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sim{display:inline-block;border:1px solid var(--warn);color:var(--warn);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;letter-spacing:.04em}
+h1{font-size:26px;margin:18px 0 4px}
+.sub{color:var(--muted);margin:0 0 16px}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:18px}
+.controls label{display:flex;flex-direction:column;font-size:13px;color:var(--muted);gap:4px}
+select,input[type=text]{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:15px;min-width:200px}
+button{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:15px;cursor:pointer}
+button.primary{background:linear-gradient(90deg,var(--teal),var(--blue));color:#04121a;border:0;font-weight:700}
+button:disabled{opacity:.4;cursor:default}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;padding:0;list-style:none}
+.steps li{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.steps li.on{border-color:var(--teal);color:var(--teal)}
+.steps li.done{color:var(--text)}
+.stage{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start}
+.col h2{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 8px;text-align:center}
+.phone{width:280px;max-width:100%;margin:0 auto;height:540px;border-radius:38px;background:#000;border:2px solid #263247;padding:12px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.screen{background:#0b1220;border-radius:28px;height:100%;overflow:hidden;display:flex;flex-direction:column}
+.notch{width:90px;height:20px;background:#000;border-radius:0 0 14px 14px;margin:0 auto}
+.bar{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);padding:4px 16px}
+.thead{padding:8px 12px;border-bottom:1px solid var(--line);text-align:center}
+.thead .nm{font-weight:700;font-size:14px}
+.thead .nb{font-size:11px;color:var(--muted)}
+.msgs{flex:1;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.b{max-width:85%;padding:8px 11px;border-radius:16px;font-size:13px;opacity:0;transform:translateY(6px);transition:all .35s}
+.b.show{opacity:1;transform:none}
+.b.in{background:#1e293b;align-self:flex-start;border-bottom-left-radius:4px}
+.b.out{background:linear-gradient(90deg,#14b8a6,#3b82f6);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.meta{font-size:10px;color:var(--muted);text-align:center;opacity:0;transition:opacity .35s}
+.meta.show{opacity:1}
+.call{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:16px}
+.call .ring{width:74px;height:74px;border-radius:50%;background:#1e293b;display:flex;align-items:center;justify-content:center;font-size:30px}
+.call.ringing .ring{animation:pulse 1s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.6)}100%{box-shadow:0 0 0 22px rgba(94,234,212,0)}}
+.call .t1{font-weight:700}
+.call .t2{color:var(--muted);font-size:13px}
+.notif{margin:10px;background:rgba(30,41,59,.95);border:1px solid #334155;border-radius:14px;padding:10px;font-size:12px;opacity:0;transform:translateY(-8px);transition:all .35s}
+.notif.show{opacity:1;transform:none}
+.notif .ap{color:var(--muted);font-size:11px;display:flex;justify-content:space-between}
+.notif .tt{font-weight:700;margin:2px 0}
+.lock{flex:1;display:flex;flex-direction:column;padding-top:30px}
+.lock .clock{font-size:44px;font-weight:300;text-align:center}
+.lock .date{text-align:center;color:var(--muted);font-size:12px;margin-bottom:10px}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:14px}
+.panel h3{margin:0 0 8px;font-size:15px}
+.panel p{margin:6px 0;color:var(--muted)}
+.panel .now{color:var(--text);font-weight:600}
+.count{font-size:12px;color:var(--muted);margin-top:6px}
+.count.bad{color:var(--warn)}
+.note{margin-top:18px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.note ul{margin:6px 0 0 18px;padding:0}
+@media (max-width:900px){.stage{grid-template-columns:1fr}.phone{height:500px}h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="#0f172a"/><path d="M5 24 L12.5 12 L16 17 L20 9 L27 24" fill="none" stroke="url(#g)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M18.4 12.2 L20 9 L21.6 12.2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <span>Teton Peaks <b>AI</b></span>
+  </div>
+  <span class="sim" id="simBadge">SIMULATION: no real calls or texts</span>
+</header>
+
+<h1>What a missed caller gets</h1>
+<p class="sub">A step by step demo of missed-call text back. Pick a business type, type the business name, and press Next.</p>
+
+<div class="controls">
+  <label>Business type
+    <select id="ind">
+      <option value="hvac">HVAC</option>
+      <option value="plumb">Plumbing</option>
+      <option value="dental">Dental office</option>
+      <option value="auto">Auto shop</option>
+    </select>
+  </label>
+  <label>Business name
+    <input type="text" id="biz" maxlength="40">
+  </label>
+  <label>Time of call
+    <select id="hrs">
+      <option value="open">During business hours</option>
+      <option value="closed">After hours</option>
+    </select>
+  </label>
+  <button id="back">Back</button>
+  <button id="next" class="primary">Next</button>
+  <button id="reset">Start over</button>
+</div>
+
+<ol class="steps" id="steps">
+  <li data-s="1">1. Missed call</li>
+  <li data-s="2">2. Auto text</li>
+  <li data-s="3">3. Customer replies</li>
+  <li data-s="4">4. Owner notified</li>
+</ol>
+
+<div class="stage">
+  <div class="col">
+    <h2>Customer's phone</h2>
+    <div class="phone"><div class="screen">
+      <div class="notch"></div>
+      <div class="bar"><span id="t1">2:14</span><span>5G</span></div>
+      <div class="call ringing" id="callView">
+        <div class="ring">&#128222;</div>
+        <div class="t1" id="callName">Calling</div>
+        <div class="t2" id="callState">Ringing...</div>
+      </div>
+      <div id="threadView" style="display:none;flex:1;flex-direction:column">
+        <div class="thead"><div class="nm" id="thName"></div><div class="nb">(208) 555-0100 &middot; texting line (sample)</div></div>
+        <div class="msgs">
+          <div class="meta" id="mMeta">Missed call &middot; just now</div>
+          <div class="b in" id="mAuto"></div>
+          <div class="b out" id="mReply"></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="col">
+    <h2>What is happening</h2>
+    <div class="panel" id="explain"></div>
+    <div class="panel" style="margin-top:12px">
+      <h3>The text the caller gets</h3>
+      <p id="preview" style="color:var(--text)"></p>
+      <div class="count" id="count"></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <h2>Owner's phone</h2>
+    <div class="phone"><div class="screen">
+      <div class="notch"></div>
+      <div class="bar"><span id="t2">2:14</span><span>LTE</span></div>
+      <div class="lock">
+        <div class="clock" id="clk">2:14</div>
+        <div class="date">On a job</div>
+        <div class="notif" id="n1"><div class="ap"><span>QUO</span><span>now</span></div><div class="tt">Missed call</div><div>(208) 555-0142</div></div>
+        <div class="notif" id="n2"><div class="ap"><span>QUO</span><span>now</span></div><div class="tt">New message from (208) 555-0142</div><div id="n2body"></div></div>
+        <div class="notif" id="n3"><div class="ap"><span>EMAIL</span><span>now</span></div><div class="tt">Email alert (optional)</div><div>A copy also goes to the owner's email.</div></div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<div class="note">
+  <b>Simulation only.</b> This page sends nothing. Sample numbers use the fictional 555-01xx range. Notification wording above is an illustration; the real look depends on the phone and the Quo app.
+  <ul>
+    <li>Built on Quo auto-replies, which text a set message when a call is missed or a voicemail is left, with separate messages for business hours and after hours.</li>
+    <li>Quo sends an auto-reply at most once every 3 hours per caller, and skips it if you recently called or texted that person.</li>
+    <li>The text comes from the business's Quo texting number, a local number in the business's name. It is not the main line unless that line is moved to Quo.</li>
+    <li>Texting goes live only after carrier registration is approved. Replies of STOP are handled by Quo automatically.</li>
+    <li>The owner reads and answers replies in the Quo app (phone, desktop, or web). Email alerts are optional.</li>
+  </ul>
+</div>
+</div>
+
+<script>
+var IND={
+ hvac:{name:"Sample Heating & Air",reply:"Hi, my furnace is blowing cold air. Can someone come out today or tomorrow?",
+  open:"Hi, this is {B}. Sorry we missed your call. How can we help? Reply here and we will text you back soon. Reply STOP to opt out.",
+  closed:"Hi, this is {B}. We are closed right now. Reply here with what you need and we will text you back when we open. Reply STOP to opt out."},
+ plumb:{name:"Sample Plumbing",reply:"Water heater is leaking in the garage. Do you have anyone free this week?",
+  open:"Hi, this is {B}. Sorry we missed your call. What can we help with? Reply here and we will text you back soon. Reply STOP to opt out.",
+  closed:"Hi, this is {B}. We are closed right now. Reply here with what you need and we will text you back when we open. Reply STOP to opt out."},
+ dental:{name:"Sample Family Dental",reply:"Hi, I was calling to set up an appointment. Any time after 3 works.",
+  open:"Hi, this is {B}. Sorry we missed your call. Reply with a good time to call you back. Please do not text health details. Reply STOP to opt out.",
+  closed:"Hi, this is {B}. Our office is closed. Reply with a good time to call you back. Please do not text health details. Reply STOP to opt out."},
+ auto:{name:"Sample Auto Repair",reply:"Need a quote on front brakes for a 2017 F-150. When can I bring it in?",
+  open:"Hi, this is {B}. Sorry we missed your call. What can we help with? Reply here and we will text you back soon. Reply STOP to opt out.",
+  closed:"Hi, this is {B}. We are closed right now. Reply here with what you need and we will text you back when we open. Reply STOP to opt out."}
+};
+var EXP={
+ 1:["Missed call","A customer calls the business line. No one can pick up. After a few rings, the line forwards the unanswered call to the business's Quo number, which takes a voicemail."],
+ 2:["Auto text","Quo texts the caller the message the owner approved. It names the business and includes how to opt out. No one on the team has to do anything."],
+ 3:["Customer replies","The caller texts back what they need. The reply lands in the business's Quo inbox."],
+ 4:["Owner notified","The owner gets a Quo app alert for the missed call and the reply, and can answer by text or call back from the app. An email copy is optional."]
+};
+var GSM=/^[A-Za-z0-9 @$\n\r_!"#%&'()*+,\-.\/:;<=>?]*$/;
+var step=1, $=function(i){return document.getElementById(i)};
+function cur(){var k=$("ind").value;return IND[k]}
+function bizName(){return ($("biz").value.trim()||cur().name)}
+function text(){return cur()[$("hrs").value].replace("{B}",bizName())}
+function render(){
+  var t=text(), n=t.length, gsm=GSM.test(t);
+  $("preview").textContent=t;
+  var lim=gsm?160:70;
+  $("count").textContent=n+" characters. "+(n<=lim?"Fits in one text.":"Over one text. Shorten the business name or wording.")+(gsm?"":" Contains a special character, which lowers the limit to 70.");
+  $("count").className="count"+(n<=lim?"":" bad");
+  $("callName").textContent=bizName();
+  $("thName").textContent=bizName();
+  $("mAuto").textContent=t;
+  $("mReply").textContent=cur().reply;
+  $("n2body").textContent=cur().reply;
+  $("callView").style.display=step===1?"flex":"none";
+  $("threadView").style.display=step>=2?"flex":"none";
+  $("callView").className="call"+(step===1?" ringing":"");
+  $("callState").textContent="Ringing... no answer";
+  $("mMeta").className="meta"+(step>=2?" show":"");
+  $("mAuto").className="b in"+(step>=2?" show":"");
+  $("mReply").className="b out"+(step>=3?" show":"");
+  $("n1").className="notif"+(step>=2?" show":"");
+  $("n2").className="notif"+(step>=4?" show":"");
+  $("n3").className="notif"+(step>=4?" show":"");
+  var e=EXP[step];
+  $("explain").innerHTML="<h3>Step "+step+" of 4: "+e[0]+"</h3><p class='now'>"+e[1]+"</p>";
+  [].forEach.call(document.querySelectorAll("#steps li"),function(li){var s=+li.dataset.s;li.className=s===step?"on":(s<step?"done":"")});
+  $("back").disabled=step===1;$("next").disabled=step===4;
+}
+$("next").onclick=function(){if(step<4){step++;render()}};
+$("back").onclick=function(){if(step>1){step--;render()}};
+$("reset").onclick=function(){step=1;render()};
+$("ind").onchange=function(){$("biz").value="";$("biz").placeholder=cur().name;render()};
+$("biz").oninput=render;$("hrs").onchange=render;
+(function(){var q=new URLSearchParams(location.search);
+ if(q.get("industry")&&IND[q.get("industry")])$("ind").value=q.get("industry");
+ if(q.get("hours")==="closed")$("hrs").value="closed";
+ var s=parseInt(q.get("step")||"1",10);if(s>=1&&s<=4)step=s;
+ $("biz").placeholder=cur().name;render();})();
+</script>
+</body>
+</html>
