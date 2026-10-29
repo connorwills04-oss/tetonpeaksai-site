@@ -101,7 +101,15 @@
      "name": "Are you based in Idaho Falls?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Teton Peaks AI is based in Idaho Falls. The first step is a free 30-minute consultation."
+      "text": "Yes. Teton Peaks AI is based in Idaho Falls. Connor meets owners in person at their business across the valley. The first step is a free 30-minute consultation."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you work with businesses in Ammon and Shelley?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We work with businesses in Ammon, Shelley, and across the Snake River Valley, the same way we do in Idaho Falls."
      }
     },
     {
@@ -133,6 +141,21 @@
  ]
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YN786B4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7YN786B4W');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_url: h, page_path: location.pathname });
+    else if (h.indexOf('calendly.com') !== -1) gtag('event', 'calendly_click', { link_url: h, page_path: location.pathname });
+  });
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -163,12 +186,45 @@
     <div class="hero-copy">
       <p class="pill"><span class="dot"></span>Serving Idaho Falls, Ammon, and Shelley</p>
       <h1>AI automation for Idaho Falls businesses</h1>
-      <p class="lede">Teton Peaks AI is based in Idaho Falls. We set up missed-call text back, lead follow-up, and an AI receptionist for small businesses in Idaho Falls, Ammon, and Shelley.</p>
+      <p class="lede">Teton Peaks AI is based right here in Idaho Falls. We set up missed-call text back, lead follow-up, and an AI receptionist for small businesses on both sides of Hitt Road, from downtown Idaho Falls to Ammon and Shelley. Connor meets owners in person at their business across the valley.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://calendly.com/tetonpeaksai/free-ai-process-consultation" target="_blank" rel="noopener">Book a free consultation <span aria-hidden="true">&rarr;</span></a>
         <a class="btn btn-ghost" href="tel:+12087106351">Call or text 208-710-6351</a>
       </div>
       <p class="muted" style="margin-top:18px;font-size:14px"><a href="/">Home</a> / Idaho Falls</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="local">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Idaho Falls</p>
+      <h2>Business in Idaho Falls</h2>
+    </div>
+    <div class="card"><p>Idaho Falls is home to about 71,800 people, up more than 9% since 2020, per Census estimates. Idaho National Laboratory is the region&#x27;s largest employer. Local hospitals, school districts, and Melaleuca are also major employers. Winters are cold, with January lows averaging about 12 degrees. When a furnace quits or a pipe freezes, a homeowner may call the next company on the list. A fast text back keeps that caller with you while you finish the job in front of you.</p></div>
+  </div>
+</section>
+
+<section class="section" id="when">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Local timing</p>
+      <h2>When calls get missed in Idaho Falls</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Winter cold snaps</h3>
+        <p>January lows average about 12 degrees, and a typical winter brings about 15 nights below zero. Furnace, frozen pipe, and no-start calls tend to land on the same mornings.</p>
+      </article>
+      <article class="card">
+        <h3>Early starts at INL</h3>
+        <p>More than 2,500 INL employees ride lab buses out to the desert Site and back each day. Many of those customers can only call a business before the bus or after they get home.</p>
+      </article>
+      <article class="card">
+        <h3>Sprinkler blowouts</h3>
+        <p>The City of Idaho Falls reminds homeowners to blow out sprinklers before a hard freeze, and the first fall freeze usually comes around September 20. Fall calls stack up fast.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -199,6 +255,21 @@
   </div>
 </section>
 
+<section class="section" id="local-pages">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">By industry</p>
+      <h2>By industry in Idaho Falls</h2>
+    </div>
+    <div class="card"><ul>
+        <li><a href="/missed-call-text-back-idaho-falls-dentists.html">Dental offices in Idaho Falls</a></li>
+        <li><a href="/missed-call-text-back-idaho-falls-hvac-plumbing.html">HVAC and plumbing in Idaho Falls</a></li>
+        <li><a href="/missed-call-text-back-idaho-falls-auto-shops.html">Auto shops in Idaho Falls</a></li>
+        <li><a href="/ai-receptionist-idaho-falls-property-management.html">Property managers in Idaho Falls</a></li>
+      </ul></div>
+  </div>
+</section>
+
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head center">
@@ -219,7 +290,11 @@
     <div class="faq">
       <details>
         <summary>Are you based in Idaho Falls?</summary>
-        <p>Yes. Teton Peaks AI is based in Idaho Falls. The first step is a free 30-minute consultation.</p>
+        <p>Yes. Teton Peaks AI is based in Idaho Falls. Connor meets owners in person at their business across the valley. The first step is a free 30-minute consultation.</p>
+      </details>
+      <details>
+        <summary>Do you work with businesses in Ammon and Shelley?</summary>
+        <p>Yes. We work with businesses in Ammon, Shelley, and across the Snake River Valley, the same way we do in Idaho Falls.</p>
       </details>
       <details>
         <summary>How much does it cost in Idaho Falls?</summary>
@@ -259,6 +334,15 @@
       <span>Teton Peaks <b>AI</b></span>
     </a>
     <p>Teton Peaks AI is a dba of Prooformance LLC. Based in Idaho Falls, ID. Serving the Snake River Valley.</p>
+    <nav class="foot-links" aria-label="Local pages" style="display:flex;gap:14px;flex-wrap:wrap;margin:8px 0">
+      <a href="/services.html">All services</a>
+      <a href="/ai-automation-idaho-falls.html">Idaho Falls</a>
+      <a href="/ai-automation-rexburg.html">Rexburg</a>
+      <a href="/ai-automation-pocatello.html">Pocatello</a>
+      <a href="/ai-automation-driggs.html">Driggs</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <p class="foot-privacy" style="font-size:13px">This site uses Google Analytics to understand visits. We do not sell your data. Questions: <a href="mailto:connor@gettetonpeaksai.com">connor@gettetonpeaksai.com</a>.</p>
     <p class="foot-legal">© 2026 Prooformance LLC, doing business as Teton Peaks AI.</p>
     <div class="foot-contact" style="display:flex;gap:18px;flex-wrap:wrap">
       <a class="foot-phone" href="tel:+12087106351">Call or text 208-710-6351</a>

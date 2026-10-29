@@ -106,6 +106,14 @@
     },
     {
      "@type": "Question",
+     "name": "Do you work with businesses that serve BYU-Idaho students?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Missed-call text back works for any business that gets calls, including landlords, cleaners, dentists, and shops near campus. A text goes out on every missed call, including during move-in week."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "How much does it cost in Rexburg?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -132,6 +140,21 @@
   }
  ]
 }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YN786B4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7YN786B4W');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_url: h, page_path: location.pathname });
+    else if (h.indexOf('calendly.com') !== -1) gtag('event', 'calendly_click', { link_url: h, page_path: location.pathname });
+  });
 </script>
 </head>
 <body>
@@ -163,12 +186,45 @@
     <div class="hero-copy">
       <p class="pill"><span class="dot"></span>Serving Rexburg, Rigby, and St. Anthony</p>
       <h1>AI automation for Rexburg businesses</h1>
-      <p class="lede">Teton Peaks AI is based in Idaho Falls and works with businesses here. We set up missed-call text back, lead follow-up, and an AI receptionist for small businesses in Rexburg, Rigby, and St. Anthony.</p>
+      <p class="lede">Teton Peaks AI is based in Idaho Falls and works with businesses in Rexburg, Rigby, and St. Anthony. Connor meets owners in person at their business across the valley. We set up missed-call text back, lead follow-up, and an AI receptionist for a town that turns over every semester.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://calendly.com/tetonpeaksai/free-ai-process-consultation" target="_blank" rel="noopener">Book a free consultation <span aria-hidden="true">&rarr;</span></a>
         <a class="btn btn-ghost" href="tel:+12087106351">Call or text 208-710-6351</a>
       </div>
       <p class="muted" style="margin-top:18px;font-size:14px"><a href="/">Home</a> / Rexburg</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="local">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Rexburg</p>
+      <h2>Business in Rexburg</h2>
+    </div>
+    <div class="card"><p>Rexburg grew from about 25,500 people in 2010 to about 40,300 in 2025, per the Census. BYU-Idaho is Madison County&#x27;s largest employer, and the university estimates about 22,000 of its students lived in Rexburg in fall 2025. BYU-Idaho runs fall, winter, and spring semesters, so students arrive and leave several times a year. Only about half of residents lived in the same home a year earlier. That means a steady flow of first-time callers. A quick text back answers them before they move on to the next search result.</p></div>
+  </div>
+</section>
+
+<section class="section" id="when">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Local timing</p>
+      <h2>When calls get missed in Rexburg</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Move-in weeks</h3>
+        <p>BYU-Idaho approved housing opened for fall check-in on September 9, 2026, and winter check-in is January 4, 2027. That week, a lot of people call businesses they have never called before.</p>
+      </article>
+      <article class="card">
+        <h3>Check-out weeks</h3>
+        <p>Fall housing contracts end December 18 at 6 p.m., after a white glove clean check. Cleaning, carpet, and repair calls bunch up at the end of each semester.</p>
+      </article>
+      <article class="card">
+        <h3>A young town</h3>
+        <p>Rexburg's median age is about 21, per the Census, and about 77% of homes are rented. Many of your callers are first-time customers.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -199,6 +255,19 @@
   </div>
 </section>
 
+<section class="section" id="local-pages">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">By industry</p>
+      <h2>By industry in Rexburg</h2>
+    </div>
+    <div class="card"><ul>
+        <li><a href="/missed-call-text-back-rexburg-dentists.html">Dental offices in Rexburg</a></li>
+        <li><a href="/missed-call-text-back-rexburg-home-services.html">Home services in Rexburg</a></li>
+      </ul></div>
+  </div>
+</section>
+
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head center">
@@ -220,6 +289,10 @@
       <details>
         <summary>Are you based in Rexburg?</summary>
         <p>No. Teton Peaks AI is based in Idaho Falls. We work with businesses in Rexburg, Rigby, and St. Anthony, and the first step is a free 30-minute consultation.</p>
+      </details>
+      <details>
+        <summary>Do you work with businesses that serve BYU-Idaho students?</summary>
+        <p>Yes. Missed-call text back works for any business that gets calls, including landlords, cleaners, dentists, and shops near campus. A text goes out on every missed call, including during move-in week.</p>
       </details>
       <details>
         <summary>How much does it cost in Rexburg?</summary>
@@ -259,6 +332,15 @@
       <span>Teton Peaks <b>AI</b></span>
     </a>
     <p>Teton Peaks AI is a dba of Prooformance LLC. Based in Idaho Falls, ID. Serving the Snake River Valley.</p>
+    <nav class="foot-links" aria-label="Local pages" style="display:flex;gap:14px;flex-wrap:wrap;margin:8px 0">
+      <a href="/services.html">All services</a>
+      <a href="/ai-automation-idaho-falls.html">Idaho Falls</a>
+      <a href="/ai-automation-rexburg.html">Rexburg</a>
+      <a href="/ai-automation-pocatello.html">Pocatello</a>
+      <a href="/ai-automation-driggs.html">Driggs</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <p class="foot-privacy" style="font-size:13px">This site uses Google Analytics to understand visits. We do not sell your data. Questions: <a href="mailto:connor@gettetonpeaksai.com">connor@gettetonpeaksai.com</a>.</p>
     <p class="foot-legal">© 2026 Prooformance LLC, doing business as Teton Peaks AI.</p>
     <div class="foot-contact" style="display:flex;gap:18px;flex-wrap:wrap">
       <a class="foot-phone" href="tel:+12087106351">Call or text 208-710-6351</a>

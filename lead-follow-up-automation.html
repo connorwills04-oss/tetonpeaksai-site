@@ -162,6 +162,21 @@
  ]
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YN786B4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7YN786B4W');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_url: h, page_path: location.pathname });
+    else if (h.indexOf('calendly.com') !== -1) gtag('event', 'calendly_click', { link_url: h, page_path: location.pathname });
+  });
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -289,7 +304,7 @@
       <div class="who-copy">
         <p class="eyebrow">Who it's for</p>
         <h2>Built for businesses that live on new leads.</h2>
-        <p class="sub">If leads come in from your website, Facebook, and the phone, Lead Engine makes sure each one gets a fast reply. A few examples:</p>
+        <p class="sub">If leads come in from your website, Facebook, and the phone, Lead Engine makes sure each one gets a fast reply. Think of a Rexburg landscaper booking fall cleanups, or a Teton Valley builder answering quote requests from a job site. A few examples:</p>
       </div>
       <ul class="chips">
       <li>Trades and home services</li>
@@ -385,6 +400,15 @@
       <span>Teton Peaks <b>AI</b></span>
     </a>
     <p>Teton Peaks AI is a dba of Prooformance LLC. Based in Idaho Falls, ID. Serving the Snake River Valley.</p>
+    <nav class="foot-links" aria-label="Local pages" style="display:flex;gap:14px;flex-wrap:wrap;margin:8px 0">
+      <a href="/services.html">All services</a>
+      <a href="/ai-automation-idaho-falls.html">Idaho Falls</a>
+      <a href="/ai-automation-rexburg.html">Rexburg</a>
+      <a href="/ai-automation-pocatello.html">Pocatello</a>
+      <a href="/ai-automation-driggs.html">Driggs</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <p class="foot-privacy" style="font-size:13px">This site uses Google Analytics to understand visits. We do not sell your data. Questions: <a href="mailto:connor@gettetonpeaksai.com">connor@gettetonpeaksai.com</a>.</p>
     <p class="foot-legal">© 2026 Prooformance LLC, doing business as Teton Peaks AI.</p>
     <div class="foot-contact" style="display:flex;gap:18px;flex-wrap:wrap">
       <a class="foot-phone" href="tel:+12087106351">Call or text 208-710-6351</a>

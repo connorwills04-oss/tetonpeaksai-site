@@ -79,21 +79,36 @@
   .cta-row .btn{width:100%}
 }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YN786B4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7YN786B4W');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_url: h, page_path: location.pathname });
+    else if (h.indexOf('calendly.com') !== -1) gtag('event', 'calendly_click', { link_url: h, page_path: location.pathname });
+  });
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html" aria-label="Teton Peaks AI home">
+    <a class="brand" href="/" aria-label="Teton Peaks AI home">
       <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="#0f172a" stroke="url(#mg)" stroke-opacity=".5"/><path d="M5 24 L12.5 12 L16 17 L20 9 L27 24" fill="none" stroke="url(#mg)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M18.4 12.2 L20 9 L21.6 12.2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
       <span>Teton Peaks <b>AI</b></span>
     </a>
     <nav class="links" aria-label="Main">
-      <a href="index.html#workflows">Workflows</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#how">How it works</a>
-      <a href="index.html#start">Pricing</a>
+      <a href="/#workflows">Workflows</a>
+      <a href="/#about">About</a>
+      <a href="/#how">How it works</a>
+      <a href="/#start">Pricing</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="https://calendly.com/tetonpeaksai/free-ai-process-consultation" target="_blank" rel="noopener">Book a free call</a>
   </div>
@@ -177,11 +192,20 @@
 
 <footer class="footer">
   <div class="wrap foot-inner">
-    <a class="brand" href="index.html" aria-label="Teton Peaks AI home">
+    <a class="brand" href="/" aria-label="Teton Peaks AI home">
       <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0f172a" stroke="#5eead4" stroke-opacity=".5"/><path d="M5 24 L12.5 12 L16 17 L20 9 L27 24" fill="none" stroke="#5eead4" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
       <span>Teton Peaks <b>AI</b></span>
     </a>
     <p>Teton Peaks AI is a dba of Prooformance LLC. Based in Idaho Falls, ID. Serving the Snake River Valley.</p>
+    <nav class="foot-links" aria-label="Local pages" style="display:flex;gap:14px;flex-wrap:wrap;margin:8px 0">
+      <a href="/services.html">All services</a>
+      <a href="/ai-automation-idaho-falls.html">Idaho Falls</a>
+      <a href="/ai-automation-rexburg.html">Rexburg</a>
+      <a href="/ai-automation-pocatello.html">Pocatello</a>
+      <a href="/ai-automation-driggs.html">Driggs</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <p class="foot-privacy" style="font-size:13px">This site uses Google Analytics to understand visits. We do not sell your data. Questions: <a href="mailto:connor@gettetonpeaksai.com">connor@gettetonpeaksai.com</a>.</p>
     <p class="foot-legal">© 2026 Prooformance LLC, doing business as Teton Peaks AI.</p>
     <div class="foot-contact" style="display:flex;gap:18px;flex-wrap:wrap">
       <a class="foot-phone" href="tel:+12087106351">Call or text 208-710-6351</a>

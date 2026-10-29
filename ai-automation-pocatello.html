@@ -106,6 +106,14 @@
     },
     {
      "@type": "Question",
+     "name": "Do you work with businesses in Blackfoot?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We work with businesses in Blackfoot and across Bingham County, the top potato-growing county in the country, the same way we do in Pocatello."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "How much does it cost in Pocatello?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -132,6 +140,21 @@
   }
  ]
 }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YN786B4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7YN786B4W');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_url: h, page_path: location.pathname });
+    else if (h.indexOf('calendly.com') !== -1) gtag('event', 'calendly_click', { link_url: h, page_path: location.pathname });
+  });
 </script>
 </head>
 <body>
@@ -163,12 +186,45 @@
     <div class="hero-copy">
       <p class="pill"><span class="dot"></span>Serving Pocatello and Blackfoot</p>
       <h1>AI automation for Pocatello businesses</h1>
-      <p class="lede">Teton Peaks AI is based in Idaho Falls and works with businesses here. We set up missed-call text back, lead follow-up, and an AI receptionist for small businesses in Pocatello and Blackfoot.</p>
+      <p class="lede">Teton Peaks AI is based in Idaho Falls and works with businesses in Pocatello and Blackfoot. Connor meets owners in person at their business across the valley. We set up missed-call text back, lead follow-up, and an AI receptionist for Gate City shops and offices.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://calendly.com/tetonpeaksai/free-ai-process-consultation" target="_blank" rel="noopener">Book a free consultation <span aria-hidden="true">&rarr;</span></a>
         <a class="btn btn-ghost" href="tel:+12087106351">Call or text 208-710-6351</a>
       </div>
       <p class="muted" style="margin-top:18px;font-size:14px"><a href="/">Home</a> / Pocatello</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="local">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Pocatello</p>
+      <h2>Business in Pocatello</h2>
+    </div>
+    <div class="card"><p>Pocatello is home to about 58,800 people, per 2025 Census estimates. Idaho State University is Bannock County&#x27;s largest employer, and its fall 2025 enrollment of 13,933 was its highest since 2012. Portneuf Medical Center, Idaho Central Credit Union, and the Pocatello School District are also major employers. Interstates 15 and 86 meet at the north edge of town. Whether a caller is a student, a family, or a driver passing through, a quick text back keeps a missed call from turning into a lost customer.</p></div>
+  </div>
+</section>
+
+<section class="section" id="when">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Local timing</p>
+      <h2>When calls get missed in Pocatello</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Interstate traffic</h3>
+        <p>About 40,000 vehicles a day used the I-15 and I-86 Flying Y interchange in 2022, per ITD. Some of your callers are passing through and will pick whoever answers.</p>
+      </article>
+      <article class="card">
+        <h3>Older homes, cold winters</h3>
+        <p>About two thirds of Pocatello homes were built before 1980, per the Census, and January lows average about 17 degrees. Cold snaps bring furnace and pipe calls.</p>
+      </article>
+      <article class="card">
+        <h3>The ISU calendar</h3>
+        <p>Idaho State's fall 2026 classes began August 24, and finals run December 14 to 18. Student calls rise and fall with that calendar.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -199,6 +255,19 @@
   </div>
 </section>
 
+<section class="section" id="local-pages">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">By industry</p>
+      <h2>By industry in Pocatello</h2>
+    </div>
+    <div class="card"><ul>
+        <li><a href="/missed-call-text-back-pocatello-dentists.html">Dental offices in Pocatello</a></li>
+        <li><a href="/missed-call-text-back-pocatello-auto-shops.html">Auto shops in Pocatello</a></li>
+      </ul></div>
+  </div>
+</section>
+
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head center">
@@ -220,6 +289,10 @@
       <details>
         <summary>Are you based in Pocatello?</summary>
         <p>No. Teton Peaks AI is based in Idaho Falls. We work with businesses in Pocatello and Blackfoot, and the first step is a free 30-minute consultation.</p>
+      </details>
+      <details>
+        <summary>Do you work with businesses in Blackfoot?</summary>
+        <p>Yes. We work with businesses in Blackfoot and across Bingham County, the top potato-growing county in the country, the same way we do in Pocatello.</p>
       </details>
       <details>
         <summary>How much does it cost in Pocatello?</summary>
@@ -259,6 +332,15 @@
       <span>Teton Peaks <b>AI</b></span>
     </a>
     <p>Teton Peaks AI is a dba of Prooformance LLC. Based in Idaho Falls, ID. Serving the Snake River Valley.</p>
+    <nav class="foot-links" aria-label="Local pages" style="display:flex;gap:14px;flex-wrap:wrap;margin:8px 0">
+      <a href="/services.html">All services</a>
+      <a href="/ai-automation-idaho-falls.html">Idaho Falls</a>
+      <a href="/ai-automation-rexburg.html">Rexburg</a>
+      <a href="/ai-automation-pocatello.html">Pocatello</a>
+      <a href="/ai-automation-driggs.html">Driggs</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <p class="foot-privacy" style="font-size:13px">This site uses Google Analytics to understand visits. We do not sell your data. Questions: <a href="mailto:connor@gettetonpeaksai.com">connor@gettetonpeaksai.com</a>.</p>
     <p class="foot-legal">© 2026 Prooformance LLC, doing business as Teton Peaks AI.</p>
     <div class="foot-contact" style="display:flex;gap:18px;flex-wrap:wrap">
       <a class="foot-phone" href="tel:+12087106351">Call or text 208-710-6351</a>

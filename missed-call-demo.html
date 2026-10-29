@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Missed-Call Text Back Demo (Simulation) | Teton Peaks AI</title>
+<meta name="description" content="See what a missed caller gets: a simulated text back from a local business. A demo of Teton Peaks AI missed-call text back.">
+<link rel="canonical" href="https://tetonpeaksai.com/missed-call-demo.html">
+<meta property="og:title" content="Missed-Call Text Back Demo (Simulation) | Teton Peaks AI">
+<meta property="og:url" content="https://tetonpeaksai.com/missed-call-demo.html">
+<meta property="og:image" content="https://tetonpeaksai.com/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Cpath d='M5 24 L12.5 12 L16 17 L20 9 L27 24' fill='none' stroke='%235eead4' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
 :root{--bg:#070b14;--bg2:#0b1120;--card:#0f172a;--line:#1e293b;--text:#e8edf5;--muted:#9aa7bb;--teal:#5eead4;--blue:#60a5fa;--accent:#2dd4bf;--warn:#fbbf24}
@@ -66,6 +71,21 @@ button:disabled{opacity:.4;cursor:default}
 .note ul{margin:6px 0 0 18px;padding:0}
 @media (max-width:900px){.stage{grid-template-columns:1fr}.phone{height:500px}h1{font-size:22px}}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YN786B4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G7YN786B4W');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_url: h, page_path: location.pathname });
+    else if (h.indexOf('calendly.com') !== -1) gtag('event', 'calendly_click', { link_url: h, page_path: location.pathname });
+  });
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -233,5 +253,6 @@ $("biz").oninput=render;$("hrs").onchange=render;
  var s=parseInt(q.get("step")||"1",10);if(s>=1&&s<=4)step=s;
  $("biz").placeholder=cur().name;render();})();
 </script>
+<p class="foot-privacy" style="font-size:13px;text-align:center;margin:24px auto;max-width:640px;padding:0 16px">This site uses Google Analytics to understand visits. We do not sell your data. Questions: <a href="mailto:connor@gettetonpeaksai.com">connor@gettetonpeaksai.com</a>.</p>
 </body>
 </html>
