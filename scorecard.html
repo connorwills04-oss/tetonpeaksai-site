@@ -200,6 +200,7 @@
       <a href="/ai-automation-idaho-falls.html">Idaho Falls</a>
       <a href="/ai-automation-rexburg.html">Rexburg</a>
       <a href="/ai-automation-pocatello.html">Pocatello</a>
+      <a href="/ai-automation-blackfoot.html">Blackfoot</a>
       <a href="/ai-automation-driggs.html">Driggs</a>
       <a href="/blog/">Blog</a>
     </nav>
@@ -259,10 +260,10 @@
   var BANDS = [
     {min:0, max:44, cls:"b-low", tag:"Leaking", title:"Leads and time are slipping through.",
      read:"Calls, messages, and follow-ups depend on you being free. When you're busy, work gets missed. The good news: the first fixes are simple.",
-     next:"Start small with the $297 Missed-Call Rescue pilot. 30 days, a weekly results text, and your $297 back if it doesn't win back at least one missed-call lead. Texting registration is paid at cost and isn't refunded. Book a free consultation and we'll set it up."},
+     next:"Start small with the $297 Missed-Call Rescue pilot, plus carrier texting fees at cost. 30 days, a weekly results text, and your $297 back if it doesn't win back at least one missed-call lead. Texting registration is paid at cost and isn't refunded. Book a free consultation and we'll set it up."},
     {min:45, max:74, cls:"b-mid", tag:"Getting by", title:"The basics work, but it's all by hand.",
      read:"You're catching most things, but it takes your time and attention. A few automations would take the follow-up and front-desk load off your plate.",
-     next:"Book a free consultation. Most businesses here fit Lead Engine ($997 setup, $297 a month): missed-call text back, fast lead replies, a booking link, and review requests. Want to test first? The $297 pilot is a 30-day trial."},
+     next:"Book a free consultation. Most businesses here fit Lead Engine ($997 setup, $297 a month): missed-call text back, fast lead replies, a booking link, and review requests. Want to test first? The $297 pilot is a 30-day trial, plus carrier texting fees at cost."},
     {min:75, max:100, cls:"", tag:"Ready to scale", title:"You're organized. Now make it run without you.",
      read:"Your front office is in good shape. The next gains come from connecting your tools and handing whole workflows to AI.",
      next:"Book a free consultation to talk through a $1,500 AI Process Audit. We map your workflows and give you a written plan, credited toward a build if you start within 14 days. Bigger needs fit AI Front Desk ($2,497 setup, $497 a month) or a Custom Build from $3,000 setup plus $500 a month."}
@@ -345,6 +346,7 @@
     err.textContent = "";
     if($("f-gotcha").value){ return; } // bot
     d.score = total(); d.band = band(d.score).tag;
+    if(window.gtag) gtag('event','scorecard_submit',{score:d.score, band:d.band, page_path:location.pathname});
     var payload = {name:d.name, business:d.business, email:d.email, phone:d.phone, score:d.score, band:d.band,
       _subject:"Scorecard: "+d.business+" ("+d.score+"/100)", answers:summary(d), page:location.href};
     Q.forEach(function(q,k){ payload["q"+(k+1)+"_"+q.t.toLowerCase().replace(/\W+/g,"_")] = q.a[ans[k]]+" ("+PTS[ans[k]]+")"; });
