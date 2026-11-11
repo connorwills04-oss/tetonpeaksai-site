@@ -1,12 +1,13 @@
 # Teton Peaks AI
 
-> Done-for-you AI automation for small businesses in Idaho Falls and the Snake River Valley of Eastern Idaho. Teton Peaks AI is a dba of Prooformance LLC, based in Idaho Falls, Idaho.
+> Done-for-you missed-call text back and AI automation. Our main focus is electricians anywhere in the US. We also serve small businesses in Idaho Falls and the Snake River Valley of Eastern Idaho. Teton Peaks AI is a dba of Prooformance LLC, based in Idaho Falls, Idaho.
 
-Founded by Connor Wills, whose background is in enterprise cloud and AI partnerships, to bring enterprise AI to small and medium businesses in the Snake River Valley. Connor meets owners in person across the valley.
+Founded by Connor Wills, whose background is in enterprise cloud and AI partnerships, to bring enterprise AI to small and medium businesses. Electricians anywhere in the US work with Teton Peaks AI by phone or online. In the Snake River Valley, Connor also meets owners in person.
 
 - Phone: 208-710-6351 (call or text)
 - Email: connor@gettetonpeaksai.com
-- Service area: Idaho Falls, Ammon, Rexburg, Rigby, Pocatello, Chubbuck, Blackfoot, Shelley, St. Anthony, Driggs, Victor
+- Main focus: electricians (residential service and repair shops), anywhere in the US, by phone or online
+- Local service area: Idaho Falls, Ammon, Rexburg, Rigby, Pocatello, Chubbuck, Blackfoot, Shelley, St. Anthony, Driggs, Victor
 - Book a free AI process consultation: https://calendly.com/tetonpeaksai/free-ai-process-consultation
 - Free consultation length: 15 minutes
 
@@ -26,6 +27,7 @@ Founded by Connor Wills, whose background is in enterprise cloud and AI partners
 - [AI Readiness Scorecard](https://tetonpeaksai.com/scorecard.html): free 10-question self-check
 - [Missed-Call Rescue Pilot](https://tetonpeaksai.com/missed-call-text-back-pilot.html)
 - [Missed-Call Rescue](https://tetonpeaksai.com/missed-call-text-back.html)
+- [Missed-Call Text Back for Electricians](https://tetonpeaksai.com/missed-call-text-back-electricians.html)
 - [Lead Engine](https://tetonpeaksai.com/lead-follow-up-automation.html)
 - [AI Front Desk (AI receptionist)](https://tetonpeaksai.com/ai-receptionist.html)
 - [AI Process Audit](https://tetonpeaksai.com/ai-process-audit.html)
