@@ -28,6 +28,9 @@ Founded by Connor Wills, whose background is in enterprise cloud and AI partners
 - [Missed-Call Rescue Pilot](https://tetonpeaksai.com/missed-call-text-back-pilot.html)
 - [Missed-Call Rescue](https://tetonpeaksai.com/missed-call-text-back.html)
 - [Missed-Call Text Back for Electricians](https://tetonpeaksai.com/missed-call-text-back-electricians.html)
+- [After-Hours Calls for Electricians](https://tetonpeaksai.com/after-hours-calls-electricians.html): nights, weekends, storm days, and options for calls you can't answer
+- [AI Receptionist vs Answering Service for Electricians](https://tetonpeaksai.com/ai-receptionist-vs-answering-service-electricians.html): side-by-side and questions to ask
+- [Missed-Call Text Examples for Electricians](https://tetonpeaksai.com/missed-call-text-examples-electricians.html): sample texts and what to leave out
 - [Lead Engine](https://tetonpeaksai.com/lead-follow-up-automation.html)
 - [AI Front Desk (AI receptionist)](https://tetonpeaksai.com/ai-receptionist.html)
 - [AI Process Audit](https://tetonpeaksai.com/ai-process-audit.html)
